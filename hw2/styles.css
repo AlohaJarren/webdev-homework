@@ -22,6 +22,16 @@ body {
   background-color: var(--white);
 }
 
+/* Hidden H1 to missing first level heading WAVE alert*/
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* Navbar */
 .navbar {
   background-color: var(--primary-color);
@@ -69,17 +79,37 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Shared Button Styling */
+button,
+input[type="submit"],
+input[type="reset"] {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+  display: block;
+  margin: 1rem auto 0 auto;
+}
+
+/* Card Buttons */
 .info-button {
   background-color: var(--primary-color);
   color: var(--white);
-  padding: 0.5rem 1rem;
-  border: none;
-  margin-top: 1rem;
-  cursor: pointer;
 }
 
 .info-button:hover {
   background-color: var(--highlight-color);
+}
+
+/* Button Container */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 /* Table */
@@ -168,14 +198,7 @@ legend {
   font-weight: bold;
 }
 
-.primary-button,
-.secondary-button {
-  padding: 0.5rem 1rem;
-  border: none;
-  margin-top: 1rem;
-  cursor: pointer;
-}
-
+/* Form Buttons */
 .primary-button {
   background-color: var(--primary-color);
   color: var(--white);
