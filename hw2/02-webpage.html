@@ -9,6 +9,151 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Add your code here -->
+    <header>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li><a href="#cards">Ex01</a></li>
+          <li><a href="#table">Ex02</a></li>
+          <li><a href="#form">Ex03</a></li>
+          <li><a href="#footer">Ex04</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="cards" class="card-section">
+        <article class="card">
+          <h2>Card #1</h2>
+          <img
+            src="https://placekitten.com/200/150"
+            alt="Three kittens in a basket"
+          />
+          <p>
+            Cat ipsum dolor sit amet, meow meow pee in shoe so be superior meow
+            but chase imaginary bugs. Dont wait for the storm to pass, dance in
+            the rain slap owner's face at 5am until human fills food dish and
+            sniff catnip and act crazy stare at owner accusingly then wink or
+            murf pratt ungow ungow yet crash against wall.
+          </p>
+          <button class="info-button">More info</button>
+        </article>
+
+        <article class="card">
+          <h2>Card #2</h2>
+          <img
+            src="https://placekitten.com/200/150"
+            alt="Three kittens in a basket"
+          />
+          <p>
+            Cat ipsum dolor sit amet, meow meow pee in shoe so be superior meow
+            but chase imaginary bugs. Dont wait for the storm to pass, dance in
+            the rain slap owner's face at 5am until human fills food dish and
+            sniff catnip and act crazy stare at owner accusingly then wink or
+            murf pratt ungow ungow yet crash against wall.
+          </p>
+          <button class="info-button">More info</button>
+        </article>
+
+        <article class="card">
+          <h2>Card #3</h2>
+          <img
+            src="https://placekitten.com/200/150"
+            alt="Three kittens in a basket"
+          />
+          <p>
+            Cat ipsum dolor sit amet, meow meow pee in shoe so be superior meow
+            but chase imaginary bugs. Dont wait for the storm to pass, dance in
+            the rain slap owner's face at 5am until human fills food dish and
+            sniff catnip and act crazy stare at owner accusingly then wink or
+            murf pratt ungow ungow yet crash against wall.
+          </p>
+          <button class="info-button">More info</button>
+        </article>
+      </section>
+
+      <section id="table">
+        <table>
+          <caption>
+            TV Listings
+          </caption>
+          <thead>
+            <tr>
+              <th>Time / Channels</th>
+              <th>8:00 PM</th>
+              <th>9:00 PM</th>
+              <th>10:00 PM</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-abc">
+              <th>ABC</th>
+              <td>The Goldbergs</td>
+              <td>Home Economics</td>
+              <td>black-ish</td>
+            </tr>
+            <tr class="row-cbs">
+              <th>CBS</th>
+              <td>Young Sheldon</td>
+              <td>United States of AI</td>
+              <td>Mom</td>
+            </tr>
+            <tr class="row-nbc">
+              <th>NBC</th>
+              <td colspan="3">Stanley Cup Playoffs</td>
+            </tr>
+            <tr class="row-fox">
+              <th>Fox</th>
+              <td colspan="3">Beat Shazam, Local Programming</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="form">
+        <form>
+          <h2>Sign Up Form</h2>
+          <p>Fill up the items in the form below.</p>
+
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" value="Jarren Calizo" />
+
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" value="jarren" />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" value="calizo@pdx.edu" />
+
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value="**********"
+          />
+
+          <label for="dob">Date of birth:</label>
+          <input type="date" id="dob" name="dob" value="2022-01-01" />
+
+          <fieldset>
+            <legend>Preferred Pronouns</legend>
+            <label
+              ><input type="radio" name="pronouns" checked /> She/her</label
+            >
+            <label><input type="radio" name="pronouns" /> He/him</label>
+            <label><input type="radio" name="pronouns" /> They/them</label>
+            <label
+              ><input type="radio" name="pronouns" /> I prefer not to say</label
+            >
+          </fieldset>
+
+          <button type="submit" class="primary-button">Submit</button>
+          <button type="reset" class="secondary-button">Reset</button>
+        </form>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <p>&copy; 2025 Portland State University</p>
+    </footer>
   </body>
 </html>

@@ -1,1 +1,177 @@
-/* Add your code here */
+:root {
+  --primary-color: #000;
+  --secondary-color: #a90063;
+  --highlight-color: #ffa500;
+  --light-gray: #f5f5f5;
+  --white: #fff;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+  color: var(--primary-color);
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  padding: 0.5rem 0;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+}
+
+.nav-list li a:hover {
+  background-color: var(--secondary-color);
+}
+
+.card-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  border: 1px solid var(--primary-color);
+  padding: 1rem;
+  max-width: 300px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.info-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.info-button:hover {
+  background-color: var(--secondary-color);
+}
+
+form {
+  background-color: var(--white);
+  border: 1px solid var(--primary-color);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 400px;
+}
+
+form label,
+form input,
+form fieldset,
+form legend,
+form button,
+form p {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+fieldset label {
+  display: inline;
+  width: auto;
+  margin-right: 1rem;
+}
+
+.primary-button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  width: 48%;
+  display: inline-block;
+}
+
+.secondary-button {
+  background-color: var(--white);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 0.5rem;
+  cursor: pointer;
+  width: 48%;
+  display: inline-block;
+}
+
+.primary-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.secondary-button:hover {
+  background-color: var(--light-gray);
+}
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 2rem auto;
+}
+
+table th,
+table td {
+  border: 1px solid var(--primary-color);
+  padding: 1rem;
+  text-align: center;
+}
+
+thead {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+tr:hover {
+  background-color: var(--highlight-color);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--light-gray);
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .card-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  form {
+    padding: 1rem;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
