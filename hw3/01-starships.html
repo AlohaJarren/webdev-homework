@@ -20,7 +20,7 @@
   </head>
   <body>
     <header></header>
-    <main class="container py-4">
+    <main class="py-4">
       <h1 class="mb-4 text-center">HW 3</h1>
 
       <section id="welcome" class="mb-5">
@@ -32,27 +32,93 @@
       </section>
 
       <section id="form" class="mb-5">
-        <h2>Form</h2>
-        <form id="userForm" novalidate>
-          <div class="py-4 px-0">
-            <div class="mb-3">
-              <label for="name" class="form-label">Full Name</label>
-              <input type="text" class="form-control" id="name" required />
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email Address</label>
-              <input type="email" class="form-control" id="email" required />
-            </div>
-            <div class="mb-3">
-              <label for="favoriteShip" class="form-label"
-                >Favorite Starship</label
-              >
-              <input type="text" class="form-control" id="favoriteShip" />
-            </div>
-            <button type="submit" class="btn btn-primary me-2">Submit</button>
-            <button type="reset" class="btn btn-secondary">Reset</button>
+        <div class="d-flex justify-content-center">
+          <div
+            class="card p-4 bg-light rounded-3 shadow-sm"
+            style="max-width: 450px; width: 100%"
+          >
+            <h2 class="text-center fw-bold">Sign Up Form</h2>
+            <p class="text-center text-muted mb-3 small">
+              Fill out the items in the form below
+            </p>
+            <form id="userForm" novalidate>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required />
+              </div>
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" />
+              </div>
+              <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" class="form-control" id="date" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Preferred Pronouns</label>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="pronouns"
+                    id="she"
+                    checked
+                  />
+                  <label class="form-check-label" for="she">She/her</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="pronouns"
+                    id="he"
+                  />
+                  <label class="form-check-label" for="he">He/him</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="pronouns"
+                    id="they"
+                  />
+                  <label class="form-check-label" for="they">They/them</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="pronouns"
+                    id="na"
+                  />
+                  <label class="form-check-label" for="na">
+                    I prefer not to say
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <button type="submit" class="btn btn-primary w-100">
+                    Submit
+                  </button>
+                </div>
+                <div class="col">
+                  <button type="reset" class="btn btn-secondary w-100">
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </section>
     </main>
   </body>

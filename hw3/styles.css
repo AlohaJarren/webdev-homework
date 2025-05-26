@@ -3,3 +3,10 @@
   padding: 1rem;
   border-radius: 0.5rem;
 }
+
+.card {
+  border-radius: 0.5rem;
+}
+.card-body {
+  padding: 2rem;
+}
