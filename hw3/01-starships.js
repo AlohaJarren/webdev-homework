@@ -1,5 +1,6 @@
 const STARSHIP_API_URL = "https://swapi.py4e.com/api/starships/";
 
+// Fetch data from SWAPI with error handling
 const fetchData = async (url) => {
   try {
     const response = await fetch(url);
@@ -11,6 +12,7 @@ const fetchData = async (url) => {
   }
 };
 
+// Dynamically creates a styled Bootstrap card for a spaceship
 const createSpaceshipComponent = (ship) => {
   const card = document.createElement("div");
   card.className = "card h-100 shadow-sm";
@@ -18,15 +20,17 @@ const createSpaceshipComponent = (ship) => {
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";
 
+  // Row for name and cost
   const titleRow = document.createElement("div");
   titleRow.className = "d-flex justify-content-between";
 
-  const name = document.createElement("h5");
-  name.className = "card-title fw-bold";
+  // Name and cost use h3 (but styled to h5)
+  const name = document.createElement("h3");
+  name.className = "card-title fw-bold h5";
   name.textContent = ship.name;
 
-  const cost = document.createElement("h5");
-  cost.className = "fw-bold";
+  const cost = document.createElement("h3");
+  cost.className = "fw-bold h5";
   cost.textContent =
     ship.cost_in_credits !== "unknown"
       ? `${Number(ship.cost_in_credits).toLocaleString()} credits`
@@ -35,11 +39,12 @@ const createSpaceshipComponent = (ship) => {
   titleRow.appendChild(name);
   titleRow.appendChild(cost);
 
+  // Manufacturer info
   const manufacturer = document.createElement("p");
   manufacturer.className = "card-text mb-4";
   manufacturer.textContent = `Manufactured by ${ship.manufacturer}`;
 
-  // NOTE: Removed 'border-top' from this row
+  // Stats (speed + cargo)
   const statRow = document.createElement("div");
   statRow.className = "row pt-3 text-center";
 
@@ -68,6 +73,7 @@ const createSpaceshipComponent = (ship) => {
   statRow.appendChild(speedDiv);
   statRow.appendChild(cargoDiv);
 
+  // Assemble the card
   cardBody.appendChild(titleRow);
   cardBody.appendChild(manufacturer);
   cardBody.appendChild(statRow);
@@ -76,6 +82,7 @@ const createSpaceshipComponent = (ship) => {
   return card;
 };
 
+// Injects the Bootstrap navbar
 const createNavbar = () => {
   const header = document.querySelector("header");
   header.innerHTML = `
@@ -104,6 +111,7 @@ const createNavbar = () => {
   `;
 };
 
+// Creates welcome section with image and bio
 const createWelcomeSection = () => {
   const welcomeSection = document.getElementById("welcome");
 
@@ -132,13 +140,13 @@ const createWelcomeSection = () => {
     "<strong>Hi, I'm Jarren!</strong> I'm a graduate student at Portland State studying cybersecurity and web development. I enjoy lifting, building cool tech, and mentoring others in coding.";
 
   textCol.appendChild(bio);
-
   row.appendChild(imgCol);
   row.appendChild(textCol);
   container.appendChild(row);
   welcomeSection.appendChild(container);
 };
 
+// Render all spaceship cards
 const renderStarships = async () => {
   const starshipsSection = document.getElementById("starships");
   const ships = await fetchData(STARSHIP_API_URL);
@@ -160,6 +168,7 @@ const renderStarships = async () => {
   starshipsSection.appendChild(container);
 };
 
+// Handles form submit logic
 const handleFormSubmit = () => {
   const form = document.getElementById("userForm");
 
@@ -168,7 +177,7 @@ const handleFormSubmit = () => {
 
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
-    const favoriteShip = document.getElementById("favoriteShip").value.trim();
+    const favoriteShip = document.getElementById("favoriteShip")?.value?.trim();
 
     if (!name || !email) {
       alert("Please fill out both name and email.");
@@ -185,6 +194,7 @@ const handleFormSubmit = () => {
   });
 };
 
+// Initialize all sections
 createNavbar();
 createWelcomeSection();
 renderStarships();

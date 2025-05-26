@@ -1,12 +1,16 @@
+/* Bio card styles for welcome section */
 .bio-card {
-  background-color: var(--bs-light);
+  background-color: var(--bs-light); /* Bootstrap light background */
   padding: 1rem;
   border-radius: 0.5rem;
 }
 
+/* Consistent card styling for starship and form cards */
 .card {
   border-radius: 0.5rem;
 }
+
+/* Extra padding for inner card body */
 .card-body {
   padding: 2rem;
 }

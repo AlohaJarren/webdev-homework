@@ -4,14 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>03 - Starships</title>
+
+    <!-- Custom and external stylesheets -->
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="styles.css" />
-    <!-- Bootstrap CSS -->
+
+    <!-- Bootstrap CSS (no integrity for WAVE compatibility) -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+
+    <!-- JavaScript file -->
     <script defer src="01-starships.js"></script>
+
     <!-- Bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -19,18 +25,24 @@
     ></script>
   </head>
   <body>
+    <!-- Navbar injected by JS -->
     <header></header>
+
     <main class="py-4">
+      <!-- Main header -->
       <h1 class="mb-4 text-center">HW 3</h1>
 
+      <!-- Welcome section (populated via JS) -->
       <section id="welcome" class="mb-5 mx-4">
         <h2>Welcome</h2>
       </section>
 
+      <!-- Starships cards from SWAPI -->
       <section id="starships" class="mb-5 mx-4">
         <h2>Starships</h2>
       </section>
 
+      <!-- Bootstrap styled centered sign-up form -->
       <section id="form" class="mb-5">
         <div class="d-flex justify-content-center">
           <div
@@ -41,29 +53,39 @@
             <p class="text-center text-muted mb-3 small">
               Fill out the items in the form below
             </p>
-            <form id="userForm" novalidate>
+
+            <!-- Accessible form with ARIA label -->
+            <form id="userForm" novalidate aria-label="Sign-up form">
+              <!-- Basic input fields -->
               <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" required />
               </div>
+
               <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" class="form-control" id="username" />
               </div>
+
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" required />
               </div>
+
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" />
               </div>
+
               <div class="mb-3">
                 <label for="date" class="form-label">Date</label>
                 <input type="date" class="form-control" id="date" />
               </div>
-              <div class="mb-3">
-                <label class="form-label">Preferred Pronouns</label>
+
+              <!-- Fieldset for radio group (fixes WAVE accessibility alerts) -->
+              <fieldset class="mb-3">
+                <legend class="form-label">Preferred Pronouns</legend>
+
                 <div class="form-check">
                   <input
                     class="form-check-input"
@@ -74,6 +96,7 @@
                   />
                   <label class="form-check-label" for="she">She/her</label>
                 </div>
+
                 <div class="form-check">
                   <input
                     class="form-check-input"
@@ -83,6 +106,7 @@
                   />
                   <label class="form-check-label" for="he">He/him</label>
                 </div>
+
                 <div class="form-check">
                   <input
                     class="form-check-input"
@@ -92,6 +116,7 @@
                   />
                   <label class="form-check-label" for="they">They/them</label>
                 </div>
+
                 <div class="form-check">
                   <input
                     class="form-check-input"
@@ -103,7 +128,9 @@
                     I prefer not to say
                   </label>
                 </div>
-              </div>
+              </fieldset>
+
+              <!-- Buttons row -->
               <div class="row">
                 <div class="col">
                   <button type="submit" class="btn btn-primary w-100">
