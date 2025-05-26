@@ -1,1 +1,6 @@
 /* Add your code here */
+.bio-card {
+  background-color: var(--bs-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}

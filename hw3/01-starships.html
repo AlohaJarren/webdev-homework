@@ -6,9 +6,21 @@
     <title>03 - Starships</title>
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="styles.css" />
-    <!-- todo: include bootstrap.css file -->
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GtvME6Xe27cG0E0wM6CqHlZy0Jo8UQ8N1YzvD9a+nObOeH97aQFa1W/v8kCwMTAf"
+      crossorigin="anonymous"
+    />
     <script defer src="01-starships.js"></script>
-    <!-- todo: include bootstrap.js file -->
+    <!-- Bootstrap JS (with Popper for nav toggles) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HoA+zNVEKoZX9Ykd+7CzHgI0Xq+o8I63Hk0h90mKtxY0JvD8cT7u9Xx1bB5cx3xZ"
+      crossorigin="anonymous"
+      defer
+    ></script>
   </head>
   <body>
     <header></header>
@@ -22,6 +34,25 @@
       </section>
       <section id="form">
         <h2>Form</h2>
+        <form id="userForm" novalidate>
+          <div class="container py-4">
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="name" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" required />
+            </div>
+            <div class="mb-3">
+              <label for="favoriteShip" class="form-label"
+                >Favorite Starship</label
+              >
+              <input type="text" class="form-control" id="favoriteShip" />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
       </section>
     </main>
   </body>
