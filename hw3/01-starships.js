@@ -1,21 +1,19 @@
-// Note: Your JavaScript code should be inside of functions
 const STARSHIP_API_URL = "https://swapi.py4e.com/api/starships/";
 
 const fetchData = async (url) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    return data.results; // Only return the array of starships
+    return data.results;
   } catch (error) {
     console.error("Error fetching data:", error);
     return [];
   }
 };
 
-// Use this function to create the individual spaceship component
 const createSpaceshipComponent = (ship) => {
-  const section = document.createElement("section");
-  section.className = "card mb-3 shadow-sm";
+  const card = document.createElement("div");
+  card.className = "card h-100 shadow-sm";
 
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";
@@ -29,11 +27,10 @@ const createSpaceshipComponent = (ship) => {
 
   const cost = document.createElement("h5");
   cost.className = "fw-bold";
-  cost.textContent = `${
+  cost.textContent =
     ship.cost_in_credits !== "unknown"
-      ? Number(ship.cost_in_credits).toLocaleString()
-      : "n/a"
-  } credits`;
+      ? `${Number(ship.cost_in_credits).toLocaleString()} credits`
+      : "n/a credits";
 
   titleRow.appendChild(name);
   titleRow.appendChild(cost);
@@ -43,10 +40,10 @@ const createSpaceshipComponent = (ship) => {
   manufacturer.textContent = `Manufactured by ${ship.manufacturer}`;
 
   const statRow = document.createElement("div");
-  statRow.className = "d-flex justify-content-between border-top pt-3";
+  statRow.className = "row border-top pt-3 text-center";
 
   const speedDiv = document.createElement("div");
-  speedDiv.className = "text-center";
+  speedDiv.className = "col";
   speedDiv.innerHTML = `
     <div class="fw-bold">${
       ship.max_atmosphering_speed !== "unknown"
@@ -57,7 +54,7 @@ const createSpaceshipComponent = (ship) => {
   `;
 
   const cargoDiv = document.createElement("div");
-  cargoDiv.className = "text-center";
+  cargoDiv.className = "col border-start";
   cargoDiv.innerHTML = `
     <div class="fw-bold">${
       ship.cargo_capacity !== "unknown"
@@ -73,30 +70,23 @@ const createSpaceshipComponent = (ship) => {
   cardBody.appendChild(titleRow);
   cardBody.appendChild(manufacturer);
   cardBody.appendChild(statRow);
-  section.appendChild(cardBody);
+  card.appendChild(cardBody);
 
-  return section;
+  return card;
 };
 
 const createNavbar = () => {
   const header = document.querySelector("header");
   header.innerHTML = `
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Homework #3</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+          <ul class="navbar-nav ms-3">
             <li class="nav-item">
               <a class="nav-link" href="#welcome">Welcome</a>
             </li>
@@ -117,8 +107,7 @@ const createWelcomeSection = () => {
   const welcomeSection = document.getElementById("welcome");
 
   const container = document.createElement("div");
-  container.className = "container py-4";
-  container.classList.add("bio-card");
+  container.className = "container py-4 bio-card";
 
   const row = document.createElement("div");
   row.className = "row align-items-center";
@@ -151,9 +140,7 @@ const createWelcomeSection = () => {
 
 const renderStarships = async () => {
   const starshipsSection = document.getElementById("starships");
-
   const ships = await fetchData(STARSHIP_API_URL);
-  console.log("Fetched Starships:", ships);
 
   const container = document.createElement("div");
   container.className = "container py-4";
@@ -176,30 +163,27 @@ const handleFormSubmit = () => {
   const form = document.getElementById("userForm");
 
   form.addEventListener("submit", (event) => {
-    event.preventDefault(); // prevent actual form submission
+    event.preventDefault();
 
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const favoriteShip = document.getElementById("favoriteShip").value.trim();
 
-    // Simple validation
     if (!name || !email) {
       alert("Please fill out both name and email.");
       return;
     }
 
-    // Output clean log of form data
     console.group("🚀 Form Submission");
     console.log("Full Name:", name);
     console.log("Email Address:", email);
     console.log("Favorite Starship:", favoriteShip || "n/a");
     console.groupEnd();
 
-    form.reset(); // optional: clear form after submission
+    form.reset();
   });
 };
 
-// Initialize all sections when page loads
 createNavbar();
 createWelcomeSection();
 renderStarships();
