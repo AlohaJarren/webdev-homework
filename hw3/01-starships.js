@@ -39,8 +39,9 @@ const createSpaceshipComponent = (ship) => {
   manufacturer.className = "card-text mb-4";
   manufacturer.textContent = `Manufactured by ${ship.manufacturer}`;
 
+  // NOTE: Removed 'border-top' from this row
   const statRow = document.createElement("div");
-  statRow.className = "row border-top pt-3 text-center";
+  statRow.className = "row pt-3 text-center";
 
   const speedDiv = document.createElement("div");
   speedDiv.className = "col";
